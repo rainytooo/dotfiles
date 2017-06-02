@@ -1,0 +1,514 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Maintainer: 
+"       Vincent.wang
+"       http://xsudo.com wangchao.omg@gmail.com  or vincent@xsudo.com
+"
+" Version: 
+"       2.0.7 - 2013-05-21 22:12:28
+"
+" Sections:
+"    -> vundle
+"    -> General
+"    -> Custom keymap Settings
+"    -> Vimwiki
+"    -> python-mode
+"    -> Ctrlp
+"    -> Powerline
+"    -> NERDTree
+"    -> Taglist
+"
+" ChangeLog:
+"		2.0.7	  2013-05-21
+"			* auto set filetype for *.tpl and *.rss file
+"		2.0.6	  2013-05-16
+"			* fix a CtrlP config error, fix some key conflict
+"		2.0.5	  2013-05-15
+"			* Add plugin taglist
+"		2.0.4	  2013-05-13
+"			* Add plugin zencoding
+"			* Add plugin surround 
+"			* Add plugin SnipMate and dependencies 
+"		2.0.3	  2013-05-12
+"			* Add NERDTree plugin
+"       2.0.2     2013-05-12
+"			* Add nginx vim ,and add all my old vimrc
+"       2.0.1     2013-05-09
+"           * Adjust this vimrc file format
+"       2.0.0     2013-05-09
+"           * Use vundle management plugin
+"           * Save all vim config files on Dropbox including vimrc and vim 
+"			  folder
+"           * Save all vim config files on github 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vundle
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+" Bundle 'tpope/vim-fugitive'
+" Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Bundle 'tpope/vim-rails.git'
+" vim-scripts repos
+" FuzzyFinder required
+" Bundle 'L9'
+" Bundle 'FuzzyFinder'
+" non github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+
+" Vimwiki
+Bundle 'vimwiki'
+" Powerline
+Bundle 'git://github.com/Lokaltog/vim-powerline.git'
+" CtrlP
+Bundle 'git://github.com/kien/ctrlp.vim.git'
+" python-mode
+Bundle 'klen/python-mode'
+" Calendar-vim
+Bundle 'mattn/calendar-vim'
+" Nginx vim
+" Bundle 'git://github.com/evanmiller/nginx-vim-syntax.git'
+" Nerdtree
+Bundle 'git://github.com/scrooloose/nerdtree.git'
+" surround
+" Bundle 'surround.vim'
+" ZenCoding
+" Bundle 'ZenCoding.vim'
+" dependencies for SnipMate
+" Bundle "MarcWeber/vim-addon-mw-utils"
+" Bundle "tomtom/tlib_vim"
+Bundle "honza/vim-snippets"
+" Snipmate
+" Bundle "garbas/vim-snipmate"
+" UltiSnips
+Plugin 'SirVer/ultisnips'
+" Taglist
+Bundle "taglist.vim"
+" unimpaired.vim
+" Bundle "git://github.com/tpope/vim-unimpaired.git"
+" php
+" Bundle "php.vim"
+" vdebug
+" Bundle 'joonty/vdebug.git'
+" riv.vim for reStructuredText
+Bundle 'Rykka/riv.vim'
+" use python virtualenv
+Bundle 'jmcantrell/vim-virtualenv'
+
+" #######################
+" colorscheme bundle
+" #######################
+" Bundle 'desert-warm-256'
+" Bundle 'burnttoast256'
+" Bundle 'Skittles-Berry'
+Bundle 'badwolf'
+" Bundle 'Gummybears'
+" ...
+
+filetype plugin indent on     " required!
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+
+" makes Vundle use `git` instead default `https` when building absolute repo URIs
+let g:vundle_default_git_proto = 'git'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" colorscheme
+colorscheme badwolf
+
+
+set nu                                  " number line
+set t_Co=256                            " number of colors				
+
+set laststatus=2                        " status line
+"set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \
+"set statusline+=\ \ \ [%{&ff}/%Y]
+"set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\
+"set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
+
+"function! CurDir()
+"    let curdir = substitute(getcwd(), $HOME, "~", "")
+"    return curdir
+"endfunction
+
+"function! HasPaste()
+"    if &paste
+"         return '[PASTE]'
+"    else
+"        return ''
+"    endif
+"endfunction
+
+" with this you can use p to paste from system, but P will not paste last
+" buffer
+" set clipboard=unnamedplus
+
+filetype plugin on
+
+" The ":syntax enable" command will keep your current color settings.  This
+" allows using ":highlight" commands to set your preferred colors before or
+" after using this command.  If you want Vim to overrule your settings with the
+" defaults, use: > :syntax on
+syntax enable
+syntax on
+
+" allow backspacing over everything in insert mode  ,set bs=2  have the same effect 
+set backspace=indent,eol,start
+
+" do not keep a backup file, use versions instead
+set nobackup
+set nowritebackup
+set noswapfile 
+
+" set mouse=a                           " on OSX press alt and click
+set history=700                         " keep 700 lines of command line history
+set undolevels=700                      " undo level
+
+set ruler                               " show the cursor position all the time
+set showcmd                             " display incomplete commands
+
+set autoread                            " auto read when file is changed from outside
+" ignore these files while expanding wild chars
+set wildignore=*.o,*.class,*.pyc
+
+set autoindent                          " auto indentation
+set smartindent							" auto indent for c program
+" set copyindent							" copy last indent
+
+
+set hlsearch                            " 开启高亮显示结果
+set incsearch                           " do incremental searching
+set ignorecase                          " ignore case when searching
+set smartcase                           " ignore case if search pattern is all lowercase,case-sensitive otherwise
+
+" disable sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+
+" swap temp file ,it's no need when you set noswapfile
+set directory=~/tmp,/tmp
+
+" Tab settins
+set smarttab                            " insert tabs on the start of a line according to context
+set tabstop=4                           " 
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+
+" set tw=79
+set colorcolumn=80                      " display a column line
+
+
+" highlight ColorColoumn ctermbg=233
+
+" auto change working directory
+set autochdir
+
+" auto reload .vimrc
+autocmd! bufwritepost .vimrc so ~/.vimrc
+
+" dictionary completion
+set dictionary=/usr/share/dict/words
+
+" listchar
+set listchars=tab:▸\ ,eol:¬
+" set list
+
+
+" Syntax of these languages is fussy over tabs Vs spaces
+autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" Customisations based on house-style (arbitrary)
+autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+
+" Treat .rss files as XML
+autocmd BufNewFile,BufRead *.rss setfiletype xml
+" Treat tpl files as HTML
+autocmd BufNewFile,BufRead *.tpl if &ft == 'smarty' | set ft=html
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Custom keymap settins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" With a map leader it's possible to do extra key combinations
+let mapleader = ","
+let g:mapleader = ","
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" Quick quit command
+noremap <Leader>q :quit<CR>                 " Quit current window
+noremap <Leader>Q :qa!<CR>                  " Quit all window
+
+" Removes highlight of your search
+noremap <C-n> :nohl<CR>
+vnoremap <C-n> :nohl<CR>
+" inoremap <C-n> :nohl<CR> " conflict with word completion
+
+" NERDTree Toggle
+noremap <F3> :NERDTreeToggle<CR>
+inoremap <F3> <ESC>:NERDTreeToggle<CR>
+vnoremap <F3> <ESC>:NERDTreeToggle<CR>
+
+
+" Useful mappings for managing tabs
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove
+map <Leader>N  <esc>:tabprevious<CR>
+map <Leader>n  <esc>:tabnext<CR>
+map <Leader>t0  <esc>:tabfirst<CR>
+map <Leader>t$  <esc>:tablast<CR>
+
+" easier moving of code blocks
+vnoremap < <gv " better indentation
+vnoremap > >gv " better indentation
+" just on osx, conflict with osx origin terminal
+" nmap <D-[> <<
+" nmap <D-]> >>
+" vmap <D-[> <gv
+" vmap <D-]> >gv
+
+
+
+" easier formatting of paragraphs
+vmap Q gq
+nmap Q gqap
+
+"Fast reloading of the .vimrc
+map <silent> <leader>ss :source ~/.vimrc<cr>
+"Fast editing of .vimrc
+map <silent> <leader>ee :e ~/.vimrc<cr>
+
+" use for Vimwiki
+" insert the last update datetime for vimwiki
+noremap <C-I>d  <Esc>1ggO<Esc>d0i<span class="author">王超</span>最后修改:<span class="update_date"><C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR></span>
+" insert the title tag for vimwiki
+noremap <C-I>t  <Esc>Go<Esc>d0i%title t - 王超.wiki<Esc>10hs
+" insert a code block for language highlight of Vimwiki
+noremap <C-I>c  <Esc>o{{{class="brush:bash;class-name:'code_class_highlighter'"<cr><cr>}}}<Esc>ki
+
+" quick insert datetime, date and time
+noremap <Leader>d1 <Esc>a<C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
+noremap <Leader>d2 <Esc>a<C-R>=strftime("%Y-%m-%d")<CR>
+noremap <Leader>d3 <Esc>a<C-R>=strftime("%H:%M:%S")<CR>
+
+" Better copy & paste
+:set pastetoggle=<F2>
+
+" taglist toggle
+map <silent> <F9> :TlistToggle<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vimwiki
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vimwiki_list=[{'path': '$HOME/360pan/docs/vim/vimwiki/01/wiki/',
+    \'path_html':'$HOME/360pan/docs/vim/vimwiki/01/html/',
+    \ 'template_path': '$HOME/360pan/docs/vim/vimwiki/01/templates/',
+    \ 'template_default': 'def_template',
+    \ 'template_ext': '.html',
+    \ 'diary_link_count': '4',
+    \ 'nested_syntaxes': {'python': 'python','ruby': 'ruby', 'js': 'javascript'},
+    \'auto_export':'0'},
+    \ {'path': '$HOME/Dropbox/dev/workspace/vimwiki/02/wiki/',
+    \'path_html':'$HOME/Dropbox/dev/workspace/vimwiki/02/html/',
+    \ 'template_path': '$HOME/Dropbox/dev/workspace/vimwiki/02/templates/',
+    \ 'template_default': 'def_template',
+    \ 'template_ext': '.html',
+    \ 'diary_link_count': '1',
+    \ 'nested_syntaxes': {'python': 'python','ruby': 'ruby', 'js': 'javascript'},
+    \'auto_export':'0'}]
+let g:vimwiki_camel_case = 0    " 关闭vimwiki的驼峰
+" 开放vimwiki的html标签
+let g:vimwiki_valid_html_tags='a,b,i,s,u,sub,sup,kbd,br,hr,div,span,script,del,code,red,center,left,right,h4,h5,h6,pre'
+" let g:vimwiki_browser = ['']
+map <F4> :Vimwiki2HTML<cr>
+" map <S-F4> :VimwikiAll2HTML<cr>                "生成wiki文档html全部
+map <F8> :Calendar<cr>          "打开日历
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => python-mode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Load the whole plugin
+" let g:pymode = 1
+" Load show documentation plugin
+let g:pymode_doc = 1
+" Key for show python documentation
+let g:pymode_doc_key = 'K'
+" Enable python folding
+let g:pymode_folding = 1
+let g:pymode_lint = 1
+
+
+
+" Enable pymode's custom syntax highlighting
+let g:pymode_syntax = 1
+
+" Enable all python highlightings
+let g:pymode_syntax_all = 1
+
+" Highlight "print" as function
+let g:pymode_syntax_print_as_function = 0
+
+" Highlight indentation errors
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+
+" Highlight trailing spaces
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Highlight string formatting
+let g:pymode_syntax_string_formatting = g:pymode_syntax_all
+
+" Highlight str.format syntax
+let g:pymode_syntax_string_format = g:pymode_syntax_all
+
+" Highlight string.Template syntax
+let g:pymode_syntax_string_templates = g:pymode_syntax_all
+
+" Highlight doc-tests
+let g:pymode_syntax_doctests = g:pymode_syntax_all
+
+" Highlight builtin objects (__doc__, self, etc)
+let g:pymode_syntax_builtin_objs = g:pymode_syntax_all
+
+" Highlight builtin functions
+let g:pymode_syntax_builtin_funcs = g:pymode_syntax_all
+
+" Highlight exceptions
+let g:pymode_syntax_highlight_exceptions = g:pymode_syntax_all
+
+" For fast machines
+let g:pymode_syntax_slow_sync = 0
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => CtrlP
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CtrP keymap and command
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+" CtrlP work path mode
+" 'c' - the directory of the current file.
+" 'r' - the nearest ancestor that contains one of these directories or files:
+" .git .hg .svn .bzr _darcs
+" 'a' - like c, but only if the current working directory outside of CtrlP is
+" not a direct ancestor of the directory of the current file.
+" 0 or '' (empty string) - disable this feature.
+let g:ctrlp_working_path_mode = 'a'
+set wildignore+=*/tmp/*,*.so,*.swp
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|pyc|class)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+" line height
+let g:ctrlp_max_height=20
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Powerline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set guifont=PowerlineSymbols\ for\ Powerline
+let g:Powerline_symbols='fancy'         "'fancy'
+set fillchars+=stl:\ ,stlnc:\
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => NERDTree settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" custom ignore 
+let NERDTreeIgnore = ['\.pyc$','\.class$','\.so$','\.dll$']
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => taglist settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TagList                                  
+set tags=tags;                             
+let Tlist_Ctags_Cmd="/usr/local/bin/ctags" 
+let Tlist_Auto_Open=1                      
+let Tlist_Use_Right_Window = 1             
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => UltiSnips
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:UltiSnipsSnippetDirectories=['UltiSnips']
+let g:UltiSnipsSnippetsDir = "~/.vim/bundle/vim-snippets/UltiSnips"
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => for django project 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sets up omni-completion for a django project in a virtualenv.
+" "
+" " Copy this file to YOUR_VIRTUALENV_DIR/.vimrc and add the following to your
+" " ~/.vimrc file:
+" "     if filereadable($VIRTUAL_ENV . '/.vimrc')
+" "         source $VIRTUAL_ENV/.vimrc
+" "     endif
+" "
+" " Thanks, Daniel!
+" "
+" http://blog.roseman.org.uk/2010/04/21/vim-autocomplete-django-and-virtualenv/
+"
+" py << EOF
+" import os.path
+" import sys
+" import vim
+"
+" # SET THIS MANUALLY
+" # =================
+" DJANGO_SETTINGS_MODULE='foo.settings'
+"
+" project_base_dir = os.environ['VIRTUAL_ENV']
+"
+" sys.path.insert(0, project_base_dir)
+"
+" activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+" execfile(activate_this, dict(__file__=activate_this))
+"
+" os.environ['DJANGO_SETTINGS_MODULE'] = DJANGO_SETTINGS_MODULE
+" EOF
+if filereadable($VIRTUAL_ENV . '/.vimrc')
+	source $VIRTUAL_ENV/.vimrc
+endif
