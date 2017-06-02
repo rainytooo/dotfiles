@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/vincent/Dropbox/docs/github.io/rainytooo.github.io/_posts/2017/05'
+let g:netrw_dirhist_2='/Users/vincent/Dropbox/docs/github.io/rainytooo.github.io/_posts/2017'
+let g:netrw_dirhist_3='/Users/vincent/Dropbox/docs/github.io/rainytooo.github.io/_posts'
+let g:netrw_dirhist_4='/Users/vincent/Dropbox/docs/github.io/rainytooo.github.io'
+let g:netrw_dirhist_5='/Users/vincent/Dropbox/docs/github.io/rainytooo.github.io/_drafts'
+let g:netrw_dirhist_6='/Users/vincent/Dropbox/docs/github.io/rainytooo.github.io/_drafts/2017'
+let g:netrw_dirhist_7='/Users/vincent/Dropbox/docs/github.io/rainytooo.github.io/_drafts/2017/05'
+let g:netrw_dirhist_8='/Users/vincent/dev/docker/py3-dj'
+let g:netrw_dirhist_9='/Users/vincent/Dropbox/docs/github.io/rainytooo.github.io/_drafts/2017/05'
