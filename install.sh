@@ -17,6 +17,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
     source install/zsh.sh
 
+    source install/vim.sh
 fi
 
 
