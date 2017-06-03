@@ -8,7 +8,7 @@ git config --global user.email ohergal@gmail.com
 
 git config --global color.ui true
 git config --global core.filemode false
-git config --global core.autocrlf true
+# git config --global core.autocrlf true
 
 git config --global alias.st status
 git config --global alias.ci commit
