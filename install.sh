@@ -13,6 +13,6 @@ if [ "$(uname)" == "Darwin" ]; then
 
     source install/brew.sh
 
-    source install/osx.sh
+    source install/git.sh
 
 fi
