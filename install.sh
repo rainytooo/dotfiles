@@ -15,8 +15,8 @@ if [ "$(uname)" == "Darwin" ]; then
 
     source install/git.sh
 
+    source install/zsh.sh
+
 fi
 
 
-# install oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
