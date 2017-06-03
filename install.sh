@@ -18,6 +18,8 @@ if [ "$(uname)" == "Darwin" ]; then
     source install/zsh.sh
 
     source install/vim.sh
+
+    source install/tmux.sh
 fi
 
 

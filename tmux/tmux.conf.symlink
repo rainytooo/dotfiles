@@ -1,5 +1,8 @@
-set -g mouse on
+# set vi mode for copy mode
+setw -g mode-keys vi
 
+# 打开鼠标支持,需要2.0以上版本
+set -g mouse on
 
 # 自动重新编号 window
 set -g renumber-windows on
@@ -9,7 +12,7 @@ set -g status-interval 1
 # 状态栏左对齐
 set -g status-justify left
 # 状态栏左侧宽度
-set -g status-left-length 20
+set -g status-left-length 25
 # 状态栏右侧宽度
 set -g status-right-length 50
 
