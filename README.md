@@ -6,9 +6,10 @@ Dotfiles
 主要包含以下内容
 
 * 安装初始化脚本
+* brew安装一些必要软件和工具
+* 配置git
 * vim配置和主题等
 * tmux配置和主题等
-* 安装一些必要的工具等等
 
 
 Installation
@@ -30,7 +31,3 @@ cd ~/.dotfiles
 
 
 
-
-* vim
-* tmux
-* init osx scripts (when reinstall osx

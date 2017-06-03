@@ -4,7 +4,7 @@ if test ! $(which brew); then
     echo "Installing homebrew"
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     # install brew cask
-    echo "Installing Cask"
+    echo "Installing Homebrew Cask"
     brew tap caskroom/cask
 fi
 
