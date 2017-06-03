@@ -18,5 +18,8 @@ git config --global alias.br branch
 git config --global alias.aa add --all
 git config --global alias.ap add --patch
 
+echo "Creating symlink for git "
+
+ln -s $HOME/.dotfiles/git/gitignore_global.symlink $HOME/.gitignore_global
 
 echo "Setup git finish...\n\n"
