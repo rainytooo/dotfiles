@@ -8,6 +8,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 echo "Creating symlink for Zsh "
 
+rm -rf $HOME/.zshrc
+
 ln -s $HOME/.dotfiles/zsh/zshrc.symlink $HOME/.zshrc
 
 echo "Setup Zsh finish...\n\n"
