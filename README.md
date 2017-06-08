@@ -31,7 +31,7 @@ xcode-select --install
 然后拉取代码,并执行初始化脚本
 
 ``` bash
-git clone git://github.com/rainytooo/dotfiles ~/.dotfiles
+git clone git@github.com/rainytooo/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 ./install.sh
 ```
