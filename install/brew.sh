@@ -25,6 +25,7 @@ formulas=(
     libevent
     openssl
     unrar
+    dos2unix
 )
 
 for formula in "${formulas[@]}"; do
@@ -36,4 +37,4 @@ for formula in "${formulas[@]}"; do
 done
 
 
-brew cask install iterm2 google-chrome
+# brew cask install iterm2 google-chrome

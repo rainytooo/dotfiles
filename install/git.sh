@@ -1,5 +1,6 @@
 #!/bin/sh
 
+echo "=============================="
 echo "Setting up Git...\n\n"
 
 

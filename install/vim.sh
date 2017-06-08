@@ -1,5 +1,6 @@
 #!/bin/sh
 
+echo "=============================="
 echo "Setting up Vim...\n\n"
 
 echo "Creating symlink for Vim "
