@@ -15,7 +15,7 @@ Todo
 -----------
 
 * [ ] zsh在安装完了以后会重置环境,后面的脚本将不会执行了
-* [ ] 添加python虚拟环境
+* [x] 添加python虚拟环境
 * [ ] 增加更新, brew , iterm, vim, tmux
 * [ ] 增加rvm环境和写作用的jekyll
 
