@@ -5,7 +5,7 @@ echo "Setting up Tmux...\n\n"
 
 echo "Creating symlink for Tmux "
 
-ln -s $HOME/.dotfiles/tmux/tmux.conf.symlink $HOME/.tmux.conf
+rm -rf $HOME/.tmux.conf && ln -s $HOME/.dotfiles/tmux/tmux.conf.symlink $HOME/.tmux.conf
 
 # for tmux plugin
 rm -rf $HOME/.tmux && mkdir -p $HOME/.tmux/
