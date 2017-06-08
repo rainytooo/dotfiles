@@ -3,7 +3,7 @@
 echo "=============================="
 echo "Setting up Zsh...\n\n"
 
-if test ! $(which ); then
+if test ! $(which upgrade_oh_my_zsh); then
     upgrade_oh_my_zsh
 else
     # install oh my zsh
