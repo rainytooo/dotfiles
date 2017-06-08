@@ -34,3 +34,6 @@ for formula in "${formulas[@]}"; do
         brew install $formula
     fi
 done
+
+
+brew cask install iterm2 google-chrome

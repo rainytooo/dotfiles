@@ -15,11 +15,11 @@ if [ "$(uname)" == "Darwin" ]; then
 
     source install/git.sh
 
-    source install/zsh.sh
-
     source install/vim.sh
 
     source install/tmux.sh
+
+    source install/zsh.sh
 fi
 
 
