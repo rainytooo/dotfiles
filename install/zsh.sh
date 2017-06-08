@@ -4,10 +4,10 @@ echo "=============================="
 echo "Setting up Zsh...\n\n"
 
 if test ! $(which upgrade_oh_my_zsh); then
-    upgrade_oh_my_zsh
-else
     # install oh my zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &
+else
+    upgrade_oh_my_zsh
 fi
 
 echo "Creating symlink for Zsh "
