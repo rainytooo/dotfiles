@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if test ! $(which brew); then
     echo "Installing homebrew"
@@ -13,7 +13,7 @@ echo "=============================="
 
 formulas=(
     # flags should pass through the the `brew list check`
-    'vim --with-override-system-vim'
+    vim
     ack
     diff-so-fancy
     dnsmasq
@@ -28,12 +28,18 @@ formulas=(
     dos2unix
 )
 
+vim_option="--with-override-system-vim"
+
 for formula in "${formulas[@]}"; do
     if brew list "$formula" > /dev/null 2>&1; then
         echo "$formula already installed... try upgrade."
         brew upgrade $formula
     else
-        brew install $formula
+        if [[ $formula = "vim" ]]
+            brew install vim "${vim_option}"
+        else
+            brew install $formula
+        fi
     fi
 done
 
