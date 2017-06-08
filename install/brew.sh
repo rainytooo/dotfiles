@@ -35,7 +35,7 @@ for formula in "${formulas[@]}"; do
         echo "$formula already installed... try upgrade."
         brew upgrade $formula
     else
-        if [[ $formula = "vim" ]]
+        if [[ $formula = "vim" ]]; then
             brew install vim "${vim_option}"
         else
             brew install $formula
