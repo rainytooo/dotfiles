@@ -19,6 +19,8 @@ if [ "$(uname)" == "Darwin" ]; then
 
     source install/tmux.sh
 
+    source install/python.sh
+
     source install/zsh.sh
 fi
 
