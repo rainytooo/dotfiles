@@ -31,7 +31,7 @@ formulas=(
 for formula in "${formulas[@]}"; do
     if brew list "$formula" > /dev/null 2>&1; then
         echo "$formula already installed... try upgrade."
-        brew update $formula
+        brew upgrade $formula
     else
         brew install $formula
     fi
