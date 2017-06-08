@@ -43,5 +43,5 @@ set -g @resurrect-capture-pane-contents 'on'
 # for vim
 set -g @resurrect-strategy-vim 'session'
 
-set -g @continuum-save-interval '10'
+set -g @continuum-save-interval '0'
 
