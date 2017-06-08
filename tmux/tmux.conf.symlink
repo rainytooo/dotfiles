@@ -7,6 +7,9 @@ set -g mouse on
 # 自动重新编号 window
 set -g renumber-windows on
 
+# 居中窗口列表
+set -g status-justify centre
+
 # 设置自动刷新的时间间隔
 set -g status-interval 1
 # 状态栏左对齐
