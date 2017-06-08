@@ -6,6 +6,8 @@ if test ! $(which brew); then
     # install brew cask
     echo "Installing Homebrew Cask"
     brew tap caskroom/cask
+else
+    brew update
 fi
 
 echo -e "\n\nInstalling homebrew packages..."
