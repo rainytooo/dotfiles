@@ -3,6 +3,7 @@
 echo "=============================="
 echo "Setting up Git...\n\n"
 
+rm -rf $HOME/.gitconfig
 
 git config --global user.name Vincent Wantchalk
 git config --global user.email ohergal@gmail.com
