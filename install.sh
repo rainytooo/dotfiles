@@ -21,6 +21,8 @@ if [ "$(uname)" == "Darwin" ]; then
 
     source install/python.sh
 
+    source install/ruby.sh
+
     source install/zsh.sh
 fi
 

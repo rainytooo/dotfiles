@@ -17,7 +17,7 @@ Todo
 * [ ] zsh在安装完了以后会重置环境,后面的脚本将不会执行了
 * [x] 添加python虚拟环境
 * [ ] 增加更新, brew , iterm, vim, tmux
-* [ ] 增加rvm环境和写作用的jekyll
+* [x] 增加rvm环境和写作用的jekyll
 
 Installation
 ------------
@@ -40,7 +40,11 @@ cd ~/.dotfiles
 Change Log
 ----------
 
+* 2017-06-09
+    - 增加rvm
+
 * 2017-06-08
     - 更新了tmux的插件,和插件的安装方式
     - 调整了tmux和zsh的顺序
     - 打印输出添加一些分隔符
+    - 增加python开发环境,添加了pyenv和pyenv-virtualenv
