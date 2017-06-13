@@ -306,3 +306,13 @@ let g:netrw_browse_split = 4    " 打开文件的方式0重用,1水平分割,2�
 let g:netrw_winsize = 20        " 控制初始窗口大小为20%
 " let g:netrw_banner = 0          " 关闭横幅
 " let g:netrw_liststyle = 3       " 使用树形风格列表
+
+
+" Ctag
+" set tags+=./tags
+" ------------------------------------------------------------
+" Use tags file from ancestor directory if possible
+set tags+=tags;/
+" ------------------------------------------------------------
+" Switch pwd to whichever file I'm current editing
+autocmd BufEnter * lcd %:p:h 

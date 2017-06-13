@@ -1,9 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/vincent/dotfiles/install'
-let g:netrw_dirhist_2='/Users/vincent/dotfiles'
-let g:netrw_dirhist_3='/Users/vincent/dotfiles/install'
-let g:netrw_dirhist_4='/Users/vincent/dotfiles'
-let g:netrw_dirhist_5='/Users/vincent/dotfiles/install'
-let g:netrw_dirhist_6='/Users/vincent/dotfiles'
-let g:netrw_dirhist_7='/Users/vincent/dotfiles/install'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/vincent/360pan/vincent_mp_15/dev/workspace/python/2016/rinpoche_ask_api'
