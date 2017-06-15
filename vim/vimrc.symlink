@@ -50,6 +50,9 @@ Bundle 'klen/python-mode'
 " Nerdtree
 Bundle 'git://github.com/scrooloose/nerdtree.git'
 
+" Tagbar
+Bundle 'majutsushi/tagbar'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -358,6 +361,12 @@ let NERDTreeIgnore = ['\.pyc$','\.class$','\.so$','\.dll$']
 noremap <F3> :NERDTreeToggle<CR>
 inoremap <F3> <ESC>:NERDTreeToggle<CR>
 vnoremap <F3> <ESC>:NERDTreeToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => tagbar
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nmap <F8> :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => python-mode
