@@ -354,7 +354,10 @@ autocmd BufEnter * lcd %:p:h
 " custom ignore 
 let NERDTreeIgnore = ['\.pyc$','\.class$','\.so$','\.dll$']
 
-
+" NERDTree Toggle
+noremap <F3> :NERDTreeToggle<CR>
+inoremap <F3> <ESC>:NERDTreeToggle<CR>
+vnoremap <F3> <ESC>:NERDTreeToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => python-mode
