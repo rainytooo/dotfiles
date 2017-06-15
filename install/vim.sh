@@ -7,11 +7,12 @@ echo "Creating symlink for Vim "
 
 rm -rf $HOME/.vim && rm -rf $HOME/.vimrc
 
-ln -s $HOME/.dotfiles/vim_without_plugin/vimrc.symlink $HOME/.vimrc
+ln -s $HOME/.dotfiles/vim/vimrc.symlink $HOME/.vimrc
 
-ln -s $HOME/.dotfiles/vim_without_plugin/vim.symlink $HOME/.vim
+ln -s $HOME/.dotfiles/vim/vim.symlink $HOME/.vim
 
-git clone https://github.com/python-mode/python-mode.git $HOME/.vim/python-mode
+echo "install vim plugins"
 
+vim +PluginInstall +qall
 
 echo "Setup Vim finish...\n\n"

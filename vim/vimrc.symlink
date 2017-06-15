@@ -6,12 +6,16 @@
 " Vim version: 8.0.600
 "       
 " Version: 
-"       3.0.2
+"       3.0.4
 "
 " Sections:
 "
 "
 " ChangeLog:
+"       * 3.0.4 2017-06-16
+"               - 增加vundle
+"               - 添加python mode
+"               - 添加nerdtree
 "       * 3.0.3 2017-05-26
 "               - 添加了wildmenu和wildmode来增强命令补全和显示补全的提示
 "               - 添加了path参数,增加了**,方便查找的时候递归
@@ -23,8 +27,34 @@
 " 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vundle
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set nocompatible                        " be iMproved
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+
+" python-mode
+Bundle 'klen/python-mode'
+
+" Nerdtree
+Bundle 'git://github.com/scrooloose/nerdtree.git'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
 
 " when use tmux , the term color scheme will broken
 if exists('$TMUX')
@@ -316,3 +346,66 @@ set tags+=tags;/
 " ------------------------------------------------------------
 " Switch pwd to whichever file I'm current editing
 autocmd BufEnter * lcd %:p:h 
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => NERDTree settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" custom ignore 
+let NERDTreeIgnore = ['\.pyc$','\.class$','\.so$','\.dll$']
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => python-mode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Load the whole plugin
+" let g:pymode = 1
+" Load show documentation plugin
+let g:pymode_doc = 1
+" Key for show python documentation
+let g:pymode_doc_key = 'K'
+" Enable python folding
+let g:pymode_folding = 1
+let g:pymode_lint = 1
+
+
+
+" Enable pymode's custom syntax highlighting
+let g:pymode_syntax = 1
+
+" Enable all python highlightings
+let g:pymode_syntax_all = 1
+
+" Highlight "print" as function
+let g:pymode_syntax_print_as_function = 0
+
+" Highlight indentation errors
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+
+" Highlight trailing spaces
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Highlight string formatting
+let g:pymode_syntax_string_formatting = g:pymode_syntax_all
+
+" Highlight str.format syntax
+let g:pymode_syntax_string_format = g:pymode_syntax_all
+
+" Highlight string.Template syntax
+let g:pymode_syntax_string_templates = g:pymode_syntax_all
+
+" Highlight doc-tests
+let g:pymode_syntax_doctests = g:pymode_syntax_all
+
+" Highlight builtin objects (__doc__, self, etc)
+let g:pymode_syntax_builtin_objs = g:pymode_syntax_all
+
+" Highlight builtin functions
+let g:pymode_syntax_builtin_funcs = g:pymode_syntax_all
+
+" Highlight exceptions
+let g:pymode_syntax_highlight_exceptions = g:pymode_syntax_all
+
+" For fast machines
+let g:pymode_syntax_slow_sync = 0
