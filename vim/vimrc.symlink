@@ -76,6 +76,9 @@ let g:mapleader = ","
 " Better copy & paste
 :set pastetoggle=<F2>
 
+" set clipboard for system¬
+" set clipboard=unnamed¬
+
 " Fast saving
 nmap <leader>w :w!<cr>
 
@@ -89,6 +92,8 @@ map <silent> <leader>ss :source ~/.vimrc<cr>
 "Fast editing of .vimrc
 map <silent> <leader>ee :e ~/.vimrc<cr>
 
+" quick switch buffer
+:nnoremap <F5> :buffers<CR>:buffer<Space>
 
 " Removes highlight of your search
 " noremap <C-n> :nohl<CR>
